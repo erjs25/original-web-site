@@ -1,0 +1,417 @@
+/*
+共通のデザイン・レイアウト
+*/
+
+h1{
+color: #F7F5E9;
+
+}
+
+header {
+    background-color:gray(213, 215, 218, 0.753);
+    padding: 15px 20px;
+    text-align: center;
+}
+
+body {
+    background-color: #F7F5E9; 
+    color: #333; 
+}
+
+/* 
+Header
+*/
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+
+
+/* ナビゲーションのスタイル */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color:  #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ハンバーガーボタン */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* スマホ用メニュー */
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ff6f61;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* メニューが開いたとき */
+    nav.active {
+        display: block;
+    }
+}
+
+
+:root {
+    --primary-color: #f5fbfc;
+    --secondary-color: #2ecc71;
+     --text-color: # ;
+    --background-color:  #F7F5E9;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  a {
+    color: var(--primary-color);
+  }
+  
+
+/*
+section-01
+*/
+.sec-01{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #333 1px solid;
+}
+
+video{
+    display: block;
+    width: 175%;
+    height: 90vh; 
+    object-fit: cover;
+    transform: translateX(-20%);
+
+.top-contet-mov{
+    position: relative;
+}
+}
+
+/*
+seection-02(自己紹介)
+*/
+.sec-02 {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: left;
+}
+
+/* 自己紹介コンテナ */
+.profile-container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    /* background:; */
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+
+.profile-img {
+    width: 60%;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid black; 
+}
+
+::content>
+
+/* テキスト部分 */
+.profile-text {
+    flex: 1;
+}
+
+.profile-text h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.profile-text p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* 
+section-03
+*/
+.sec-03{
+    width: 100%;
+    height: 550px;
+    border: #2ecc71 4px solid;
+
+    body {
+        background-color:#333 ;
+      }
+      .slider {
+        margin: 30px auto 0;
+        max-width: 480px;
+        width: 80%;
+        background-color: #333;
+      }
+      .slick-img img {
+        height: auto;
+        width: 100%;
+        color:black;
+      }
+}
+
+
+/* 
+section-04
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+    grid-template-rows: repeat(3, 1fr); /* 3行 */
+    width: 500%;
+    max-width: 1343px;
+    height: 985px;
+    gap: 0; /* 枠の間の余白なし */
+    border: 2px solid gray; /* 外枠の線 */
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid gray; /* 縦の線 */
+    border-bottom: 1px solid gray; /* 横の線 */
+    overflow: hidden;
+}
+
+/* 右端の列のボーダーを削除 */
+.cell:nth-child(3n) {
+    border-right: none;
+}
+
+/* 最下段のボーダーを削除 */
+.cell:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+
+.cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠いっぱいにフィット */
+}
+
+.grid-container figure {
+    text-align: center; /* キャプションを中央寄せ */
+}
+
+.grid-container figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+#IMG_food2 {
+    margin-top: 20px; max-width: 80%;  height: auto;
+}
+
+#IMG_food3 {
+    max-width: 100%; /* 画面の50%まで縮小 */
+    height: auto; margin-top: -30px;
+}
+
+#IMG_food5 {
+    max-width: 90%; /* 画面の50%まで縮小 */
+    height: 30;
+    margin-top: -60px;
+}
+    
+
+#IMG_food6 {
+    max-width: 75%;
+    height: auto; 
+    max-height: 300px; 
+    margin-top: -50px;
+}
+    
+
+#IMG_food7{
+    max-width: 75%;
+    height: auto; 
+    max-height: 300px; 
+    margin-top: -50px;
+
+}
+
+#IMG_food8{
+    max-width: 80%;
+    height: auto; 
+    max-height: 300px; 
+    margin-top: -50px;
+
+}
+
+#IMG_food9{
+    max-width: 65%;
+    height: auto; 
+    max-height: 300px; 
+    margin-top: -40px;
+}
+/* 
+section-05
+*/
+/* セクション全体の外枠 */
+/* セクション全体の外枠 */
+#sec-05 {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 4px solid #2ecc71; /* 外枠のグリーン線 */
+    box-sizing: border-box;
+  }
+  
+  /* 横に3分割するFlexコンテナ */
+  .flex-container5 {
+    display: flex;
+    flex-direction: row;   /* 横並び */
+    height: 400px;         /* コンテナの高さ */
+    border: 2px solid gray;/* コンテナ全体の外枠 */
+    box-sizing: border-box;
+  }
+  
+  /* 各セルの設定 */
+  .cell {
+    flex: 1;  /* 均等に分割 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color:#F7F5E9; /* 背景色を設定して枠線を目立たせる */
+    border-right: 2px solid gray;  /* 各セルの右側に縦線 */
+  }
+  
+  /* 最後のセルには右側の線を付けない */
+  .cell:last-child {
+    border-right: none;
+  }
+  
+
+
+/*
+section-06
+*/
+.sec-06{
+    width: 100%;
+    height: 700px;
+    border: #2ecc71 4px solid;
+}
+
+/*
+section-07
+*/
+.sec-07{
+    width: 100%;
+    height: 700px;
+    border: #2ecc71 4px solid;
+}
+/* 
+Footer
+*/
+
+.footer{
+    
+    
+    height: 400px;
+    background-color:gray(192, 218, 255, 0.753);;
+    color:grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-left{
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+.footer-center{
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+.footer-right{
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+
+
+.footer-center{
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+
+.footer-contents{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+

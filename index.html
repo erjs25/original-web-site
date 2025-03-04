@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korean trip</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+  </head>
+
+  <!-- JS -->
+  <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script
+    type="text/javascript"
+    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Annyeong, Seoul</h1>
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger" id="hamburger">☰</button>
+        <nav id="nav-menu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#spots">Tourist Spots</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#guide">guide</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="sec-01">
+        <div class="top-contet-mov">
+          <video
+            id="videos"
+            src="/assets/video/sec-top-001.mp4"
+            autoplay
+            loop
+            muted
+          ></video>
+        </div>
+      </section>
+      <section class="sec-02">
+        <div class="profile-container">
+          <img
+            src="./assets/img/profileimg.jpeg"
+            alt="Profile Image"
+            class="profile-img"
+          />
+          <div class="profile-text">
+            <h2>AboutME</h2>
+
+            <p class="left"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-03">
+        <p>3つのおすすめ</p>
+
+        <div class="container">
+          <div class="slider">
+            <div class="slick-img">
+              <img
+                src="./assets/img/image1.jpeg"
+                alt="食"
+                data-target="sec-04"
+              />
+            </div>
+            <div class="slick-img">
+              <img
+                src="./assets/img/image2.jpg"
+                alt="スポット"
+                data-target="sec-05"
+              />
+            </div>
+            <div class="slick-img">
+              <img
+                src="./assets/img/image3.jpeg"
+                alt="スポット"
+                data-target="sec-06"
+              />
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(function () {
+            $(".slider").slick({
+              autoplay: true,
+              dots: true,
+            });
+          });
+        </script>
+      </section>
+
+      <section id="sec-04" class="sec-04">
+        <p>Food</p>
+
+        <div class="grid-container">
+          <div class="cell">
+            <figure>
+              <img
+                src="./assets/img/IMG_food.PNG"
+                alt="Image 1"
+                style="width: 400px"
+                class="naver-map-link"
+                data-location="https://naver.me/FqWta5qP"
+              />
+              <figcaption>무쇠김치삼겹 명동점</figcaption>
+            </figure>
+          </div>
+
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food2"
+                src="./assets/img/IMG_food2.PNG"
+                alt="image 2"
+                style="width: 350px"
+                class="naver-map-link"
+                data-location="https://naver.me/F0z2zX8Q"
+              />
+
+              <figcaption>창화당 익선점</figcaption>
+            </figure>
+          </div>
+
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food3"
+                src="./assets/img/IMG_food3.PNG"
+                alt="Image 3"
+                style="width: 350px"
+                class="naver-map-link"
+                data-location="https://naver.me/FDnCnVjF"
+              />
+              <figcaption>브레디스커비</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                src="./assets/img/IMG_food4.PNG"
+                alt="Image 4"
+                style="width: 350px"
+                class="naver-map-link"
+                data-location="https://naver.me/x4FLGFtH"
+              />
+              <figcaption style="text-align: right">BEURRE BEURRE</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food5"
+                src="./assets/img/IMG_food5.png"
+                alt="Image 5"
+                style="width: 500px"
+                class="naver-map-link"
+                data-location="https://naver.me/FJbWkUYV"
+              />
+              <figcaption>Bonilla a la vista</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food6"
+                src="./assets/img/IMG_food6.png"
+                alt="Image 6"
+                style="width: 550px"
+                class="naver-map-link"
+                data-location="https://naver.me/GgWkGs9y"
+              />
+              <figcaption>소문난 감자탕</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food7"
+                src="./assets/img/IMG_food7.PNG"
+                alt="Image 7"
+                style="width: 550px"
+                class="naver-map-link"
+                data-location="https://naver.me/5vcgmfSg"
+              />
+              <figcaption>kyochon chikin</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food8"
+                src="./assets/img/IMG_food8..png"
+                alt="Image 8"
+                style="width: 500px"
+                class="naver-map-link"
+                data-location="https://naver.me/x5GoSZpP"
+              />
+              <figcaption>앤티크커피 연남점</figcaption>
+            </figure>
+          </div>
+          <div class="cell">
+            <figure>
+              <img
+                id="IMG_food9"
+                src="./assets/img/IMG_food9.PNG"
+                alt="Image 9"
+                style="width: 500px"
+                class="naver-map-link"
+                data-location="https://naver.me/5yPiB85t"
+              />
+              <figcaption>땀땀</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document.querySelectorAll(".naver-map-link").forEach((img) => {
+          img.addEventListener("click", function () {
+            let locationUrl = this.getAttribute("data-location");
+            window.open(locationUrl, "_blank");
+          });
+        });
+      </script>
+
+      
+ 
+<section id="sec-05" class="sec-05">
+  <p>スポット</p>
+  <div class="flex-container5">
+    <div class="cell">1</div>
+    <div class="cell">2</div>
+    <div class="cell">3</div>
+  </div>
+</section>
+
+
+      <section class="sec-07">
+        <p>マップ</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <ul class="footer-contents">
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+        </ul>
+      </div>
+      <div class="footer-center">
+        <ul class="footer-contents">
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-contents">
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+          <li>○○</li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".slick-img img");
+
+        images.forEach((img) => {
+          img.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target"); // data-targetの値を取得
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth", // スムーズスクロール
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
