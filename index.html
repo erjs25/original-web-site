@@ -18,27 +18,33 @@
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
-  </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korean trip</title>
 
-  <!-- JS -->
-  <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script
-    type="text/javascript"
-    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-  ></script>
+    <!-- bxSlider の CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/bxslider@1.8.1/dist/jquery.bxslider.css"
+    />
+
+    <!-- その他の CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
   <body>
     <header>
       <div class="header-container">
         <h1>Annyeong, Seoul</h1>
-        <!-- ハンバーガーボタン -->
         <button class="hamburger" id="hamburger">☰</button>
         <nav id="nav-menu">
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#spots">Tourist Spots</a></li>
             <li><a href="#food">Food</a></li>
-            <li><a href="#guide">guide</a></li>
+            <li><a href="#guide">Guide</a></li>
           </ul>
         </nav>
       </div>
@@ -98,15 +104,6 @@
             </div>
           </div>
         </div>
-
-        <script>
-          $(function () {
-            $(".slider").slick({
-              autoplay: true,
-              dots: true,
-            });
-          });
-        </script>
       </section>
 
       <section id="sec-04" class="sec-04">
@@ -234,77 +231,219 @@
         </div>
       </section>
 
-      <script>
-        document.querySelectorAll(".naver-map-link").forEach((img) => {
-          img.addEventListener("click", function () {
-            let locationUrl = this.getAttribute("data-location");
-            window.open(locationUrl, "_blank");
-          });
-        });
-      </script>
+      <section id="sec-05" class="sec-05">
+        <p>スポット</p>
 
-      
- 
-<section id="sec-05" class="sec-05">
-  <p>スポット</p>
-  <div class="flex-container5">
-    <div class="cell">1</div>
-    <div class="cell">2</div>
-    <div class="cell">3</div>
+
+        <div class="flex-container5">
+          <div class="cell">
+            <div class="slider-container">
+              <div class="image-container">
+                <img >
+              </div>
+              <div class="nav-container"></div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="slider-container">
+              <div class="image-container">
+                <img src="./assets/img/imagespot01.jpeg" alt="Slide 1" />
+                <img src="./assets/img/imagespot03.jpeg" alt="Slide 2" />
+                <img src="./assets/img/imagespot04.jpeg" alt="Slide 3" />
+                <img src="./assets/img/imagespot06.jpeg" alt="Slide 4" />
+                <img src="./assets/img/imagespot05.jpeg" alt="Slide 5" />
+              </div>
+              <div class="nav-container"></div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="slider-container">
+              <div class="image-container">
+                <img src="./assets/img/imagespot07.jpeg" alt="Cell2 Slide 1" />
+                <img src="./assets/img/imagespot08.jpeg" alt="Cell2 Slide 2" />
+                <img src="./assets/img/imagespot09.jpeg" alt="Cell2 Slide 3" />
+                <img src="./assets/img/imagespot10.jpeg" alt="Cell2 Slide 4" />
+              </div>
+              <div class="nav-container"></div>
+            </div>
+          </div>
+
+          <div class="cell">
+            <div class="slider-container">
+              <div class="image-container">
+                <img src="./assets/img/imagespot11.jpeg" alt="Cell2 Slide 1" />
+                <img src="./assets/img/imagespt16.jpeg" alt="Cell2 Slide 2" />
+          
+                <img src="./assets/img/imagespot15.jpeg" alt="Cell2 Slide 4" />
+                <img src="./assets/img/imagespot14.jpeg" alt="Cell2 Slide 6"/>
+              </div>
+              <div class="nav-container"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <li><i class="fa fa-star"></i> </li>
+      <li><i class="fa fa-heart"></i> </li>
+    </ul>
+  </div>
+
+  <section id="sec-06">
+      <div class="dropdown-container">
+          <div class="dropholder">
+              <img src="./assets/img/IMG_shop.jpg" alt="Left Image" class="dropdown-image" onclick="toggleMenu(this)">
+              <p>Select</p>
+              <div class="dropdown">
+                  <p><i class="fa fa-globe"></i> Go to Website</p>
+              </div>
+              <ul class="menu" style="display: none;">
+                  <li onclick="window.location.href='//www.ehyundai.com/lang/jp/index.do';">
+                      <i class="fa fa-home"></i> ホームページ
+                  </li>
+                  <li onclick="window.location.href='//www.instagram.com/thehyundai_seoul/';">
+                      <i class="fa fa-instagram"></i> Instagram
+                  </li>
+                  <li onclick="window.location.href='//naver.me/5tJtlWR8';">
+                      <i class="fa fa-twitter"></i> Naver Map
+                  </li>
+              </ul>
+          </div>
+  
+          
+          <div class="vertical-line"></div>
+  
+          <!-- 右側のドロップダウン（ホームページ選択） -->
+          <div class="dropholder">
+              <img src="./assets/img/IMG_shop2.jpg" alt="Right Image" class="dropdown-image" onclick="toggleMenu(this)">
+              <p>Select</p>
+              <div class="dropdown">
+                  <p><i class="fa fa-globe"></i> Go to Website</p>
+              </div>
+              <ul class="menu" style="display: none;">
+                  <li onclick="window.location.href='//global.musinsa.com/us/brand-index?tab=fashion';">
+                      <i class="fa fa-home"></i> ホームページ
+                  </li>
+                  <li onclick="window.location.href='//www.instagram.com/musinsa_standard';">
+                      <i class="fa fa-instagram"></i> Instagram
+                  </li>
+                  <li onclick="window.location.href='//naver.me/5r9zu8gN';">
+                      <i class="fa fa-twitter"></i> Naver Map
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  
+  <script>
+  function toggleMenu(image) {
+      // 画像の親要素（.dropholder）を取得
+      let dropholder = image.closest(".dropholder");
+  
+      // 対応するメニュー（.menu）を取得
+      let menu = dropholder.querySelector(".menu");
+  
+      // メニューの表示・非表示を切り替え
+      if (menu.style.display === "block") {
+          menu.style.display = "none";
+      } else {
+          // 他の開いているメニューを閉じる
+          document.querySelectorAll(".menu").forEach(m => {
+              m.style.display = "none";
+          });
+  
+          menu.style.display = "block";
+      }
+  }
+  
+  // 他の場所をクリックしたらメニューを閉じる
+  document.addEventListener("click", function(event) {
+      let isClickInsideMenu = event.target.closest(".dropholder");
+  
+      if (!isClickInsideMenu) {
+          document.querySelectorAll(".menu").forEach(menu => {
+              menu.style.display = "none";
+          });
+      }
+  });
+  </script>
+  
+  <style>
+  /* メニューの基本スタイル */
+  .menu {
+      display: none;  /* 初期状態は非表示 */
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      list-style: none;
+      z-index: 1000;
+  }
+  
+  .menu li {
+      padding: 8px;
+      cursor: pointer;
+  }
+  
+  .menu li:hover {
+      background: #f0f0f0;
+  }
+  </style>
+  
+            </ul>
+        </div>
+    </div>
+</section>
+  
+
+
+<section class="sec-07">
+  <!-- 背景画像 -->
+  <img src="./assets/img/IMG_spot4.jpg" alt="マップ画像" class="background-img">
+  
+  <!-- 重ねる画像（小さくする） -->
+  <img src="./assets/img/IMG_map2.jpeg" alt="重ねる画像" class="overlay-img">
+  
+  <div class="sec-06-content">
+      <h2</h2>
+      <p></p>
   </div>
 </section>
 
 
-      <section class="sec-07">
-        <p>マップ</p>
-      </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-left">
-        <ul class="footer-contents">
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
-        </ul>
+   
       </div>
-      <div class="footer-center">
-        <ul class="footer-contents">
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
-        </ul>
-      </div>
-      <div class="footer-right">
-        <ul class="footer-contents">
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
-          <li>○○</li>
+
+
+       <footer class="footer">
+      <div id="section7">
+
+        <div class="contents">
+          <h1></h1>
+        
+        </div>
+        <footer>
+          <div id="button">footer</div>
+          <div id="container">
+          <div id="cont">
+            <div class="copyright">
+              <p>© 2018 - Organisation</p>
+            </div>
+            <div class="sns">
+              <a href="#" class="insta"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a>
+              <a href="#" class="tw"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+              <a href="#" class="fb"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          </div>
+        </footer>
         </ul>
       </div>
     </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".slick-img img");
-
-        images.forEach((img) => {
-          img.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-target"); // data-targetの値を取得
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-              targetSection.scrollIntoView({
-                behavior: "smooth", // スムーズスクロール
-                block: "start",
-              });
-            }
-          });
-        });
-      });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@1.8.1/dist/jquery.bxslider.min.js"></script>
+    <script src="./assets/JS/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
