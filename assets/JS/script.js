@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // すべての .cell を取得
-  const cells = document.querySelectorAll(".cell");
-
-  cells.forEach((cell) => {
-    const sliderContainer = cell.querySelector(".slider-container");
-    if (!sliderContainer) return; // slider-container がない場合はスキップ
-
-    const imageContainer = sliderContainer.querySelector(".image-container");
-    const images = imageContainer.querySelectorAll("img");
-    const navContainer = sliderContainer.querySelector(".nav-container");
-    const totalImages = images.length;
-    let imageIndex = 0;
-    let interval;
 
     // 画像の数だけナビゲーションボタンを作成
     for (let i = 0; i < totalImages; i++) {
@@ -60,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 初期化
     updateSlider();
     autoPlay();
-  });
-});
 
 // jQuery スライダー設定
 $(function () {
@@ -71,6 +55,18 @@ $(function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const overlayInput = document.getElementById("overlay-input");
+
+  if (overlayInput) {
+    overlayInput.addEventListener("change", function () {
+      console.log("ハンバーガーメニューの状態:", overlayInput.checked);
+    });
+  }
+});
+
+
+      
 // Naver マップリンクのクリックイベント
 document.querySelectorAll(".naver-map-link").forEach((img) => {
   img.addEventListener("click", function () {
@@ -97,6 +93,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll("#overlay a");
+  const overlayInput = document.getElementById("overlay-input");
+
+  menuLinks.forEach((link) => {
+      link.addEventListener("click", function (event) {
+          event.preventDefault(); // デフォルトのジャンプを防ぐ
+          const targetId = this.getAttribute("href"); // クリックしたリンクのhref取得
+          const targetSection = document.querySelector(targetId); // 該当のセクションを取得
+
+          if (targetSection) {
+              window.scrollTo({
+                  top: targetSection.offsetTop - 50, // 少し上に余白をつける
+                  behavior: "smooth", // スムーズスクロール
+              });
+          }
+
+          // メニューを閉じる
+          overlayInput.checked = false;
+      });
+  });
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const footer = document.querySelector(".footer");
@@ -138,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+

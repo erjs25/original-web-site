@@ -1,92 +1,144 @@
 /*
 共通のデザイン・レイアウト
 */
-body{
-    width: 100%;
-    overflow-x: hidden;
-}
-
-h1{
-color: #F7F5E9;
-
-}
 
 header {
-    background-color:gray(213, 215, 218, 0.753);
-    padding: 15px 20px;
-    text-align: center;
+    background-color: gray; 
 }
 
 body {
-    background-color: #F7F5E9; 
-    color: #333; 
-}
-
-
-:root {
-    --main-bg: gray;
-    --text-color: gray;
-    --button-bg: rgba(255, 192, 203, 0.653);
-    --menu-bg:
-    --hover-bg:#F7F5E9;
-}
-
-/* ヘッダーのスタイル */
-header {
-    background-color: var(--main-bg);
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    background: #F7F5E9;
+    margin: 0;
+    font-family: arial;
     width: 100vw;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-/* ヘッダーコンテナ */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* タイトル */
-h1 {
-    font-family: "Arial", sans-serif;
-    color: var(--text-color);
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* ハンバーガーボタン */
-.hamburger {
-    background: var(--button-bg);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 8px 12px;
-    margin-right: 60px;
-    border-radius: 8px;
+    height: 100vh;
+    animation: bugfix infinite 1s;
+    -webkit-animation: bugfix infinite 1s;
+  }
+  
+  @keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+  @-webkit-keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+  #overlay-button {
+    position: absolute;
+    right: 2em;
+    top: 3em;
+    padding: 26px 11px;
+    z-index: 5;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.hamburger:hover {
-    background: var(--hover-bg);
-}
+    user-select: none;
+  }
+  #overlay-button span {
+    height: 4px;
+    width: 35px;
+    border-radius: 2px;
+    background-color:gray;
+    position: relative;
+    display: block;
+    transition: all .2s ease-in-out;
+  }
+  #overlay-button span:before {
+    top: -10px;
+    visibility: visible;
+  }
+  #overlay-button span:after {
+    top: 10px;
+  }
+  #overlay-button span:before, #overlay-button span:after {
+    height: 4px;
+    width: 35px;
+    border-radius: 2px;
+    background-color: grey;
+    position: absolute;
+    content: "";
+    transition: all .2s ease-in-out;
+  }
+  #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+    background: #fff;
+  }
+  
+  input[type=checkbox] {
+    display: none; 
+    
+  }
+  
+  input[type=checkbox]:checked ~ #overlay {
+    visibility: visible; 
+  }
+  
+  input[type=checkbox]:checked ~ #overlay-button:hover span, input[type=checkbox]:checked ~ #overlay-button span {
+    background: transparent;
+    
+    
+  }
+  input[type=checkbox]:checked ~ #overlay-button span:before {
+    transform: rotate(45deg) translate(7px, 7px);
+  
+  }
+  input[type=checkbox]:checked ~ #overlay-button span:after {
+    transform: rotate(-45deg) translate(7px, -7px);
+  
+  
+  }
+  
+  #overlay {
+    height: 100vh;
+    width: 100vw;
+    background: gray;
+    z-index: 2;
+    visibility: hidden;
+    position: fixed;
+  }
+  
+  #overlay ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  #overlay ul li {
+    padding: 1em;
+  }
+  #overlay ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  #overlay ul li a:hover {
+    color: #000!important;
+  }
 
 /* ナビメニュー */
+/* ナビメニュー（初期状態：非表示） */
 nav {
     position: absolute;
     top: 60px;
     right: 50px;
-    background: var(--menu-bg);
+    background: var(--menu-bg, gr);
     width: 200px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: none; /* 初期状態は非表示 */
 }
 
+/* ナビメニューのリスト */
 nav ul {
     list-style: none;
     padding: 0;
@@ -101,7 +153,7 @@ nav li {
 nav a {
     text-decoration: none;
     font-size: 18px;
-    color: var(--text-color);
+    color: white;
     font-weight: bold;
     display: block;
     padding: 10px;
@@ -109,68 +161,111 @@ nav a {
 }
 
 nav a:hover {
-    background: var(--hover-bg);
+    background: var(--hover-bg, #ff8f81);
     color: white;
     border-radius: 8px;
 }
 
+/* ハンバーガーボタン */
+.hamburger {
+
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+        padding-top: 50px;
+    }
+    
+    #overlay ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #overlay li {
+        margin: 20px 0;
+    }
+    
+    #overlay a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    /* メニューが開いたとき */
+    #overlay-input:checked ~ #overlay {
+        left: 0;
+    }
+    
+    /* メニューボタン */
+    #overlay-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    #overlay-button span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 6px auto;
+    }
+    
+    /* セクションのスタイル（ジャンプ後の余白調整） */
+    section {
+        padding: 100px;
+        height: 500px;
+        border-bottom: 1px solid #ccc;
+    }
+    background: var(--button-bg, #333);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    background: var(--hover-bg, #555);
+}
+
+/* メニューが開いた時のスタイル */
+nav.active {
+    display: block;
+}
 
 /* スマホ用メニュー */
 @media (max-width: 768px) {
     nav {
-        position: absolute;
         top: 60px;
         right: 0;
-        background-color: #ff6f61;
         width: 100%;
         text-align: center;
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        padding: 10px 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    /* メニューが開いたとき */
-    nav.active {
-        display: block;
+        background-color: #ff6f61;
     }
 }
 
-main{
-    margin-top: 80px;
-}
-:root {
-    --primary-color: #f5fbfc;
-    --secondary-color: #2ecc71;
-     --text-color: # ;
-    --background-color:  #F7F5E9;
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
-  a {
-    color: var(--primary-color);
-  }
   
 
 /*
 section-01
 */
 .sec-01{
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,6 +280,7 @@ video{
     transform: translateX(-20%);
 
 .top-contet-mov{
+    margin-bottom: 500px;
     position: relative;
 }
 }
@@ -255,7 +351,7 @@ section-03
 .sec-03{
     width: 100%;
     height: 550px;
-    border: #2ecc71 4px solid;
+    border: #gray 4px solid;
 
     body {
         background-color:#333 ;
@@ -272,6 +368,16 @@ section-03
         width: 100%;
         color:black;
       }
+
+      
+}
+
+.sec-03 p {
+    font-family: "Comic Sans MS", "Brush Script MT", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #d2691e; /* おしゃれなブラウン */
 }
 
 
@@ -546,6 +652,10 @@ section-06
     }
 }
 
+.image-container img {
+  display: block !important;
+  visibility: visible !important;
+}
 
 /*
 section-07
@@ -599,6 +709,8 @@ section-07
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: sticky;
+    top: 100vh;
 }
 
 *, *:before, *:after {
@@ -634,7 +746,7 @@ footer #button:hover {
 	        transition: all 1s ease;
 }
 footer {
-	position: fixed;
+	position: absolute;
 	z-index: 999;
 	bottom: 0;
 	left: 0;
@@ -644,6 +756,8 @@ footer {
 	margin: 0 auto;
 	-webkit-transition: all 1s ease;
 	        transition: all 1s ease;
+    /* position: sticky;
+    top: 100vh; */
 }
 footer:hover {
 	height: 10em;

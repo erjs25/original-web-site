@@ -35,20 +35,53 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-container">
-        <h1>Annyeong, Seoul</h1>
-        <button class="hamburger" id="hamburger">☰</button>
-        <nav id="nav-menu">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#spots">Tourist Spots</a></li>
-            <li><a href="#food">Food</a></li>
-            <li><a href="#guide">Guide</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <input type="checkbox" id="overlay-input" />
+<label for="overlay-input" id="overlay-button"><span></span></label>
+
+<!-- メニュー -->
+<div id="overlay">
+    <ul>
+        <li><a href="#sec-03">choice</a></li>
+        <li><a href="#sec-04">Food</a></li>
+        <li><a href="#sec-05">Spot</a></li>
+        <li><a href="#sec-06">Shopping</a></li>
+    </ul>
+</div>
+
+<!-- セクション（ジャンプ先） -->
+<!-- <section id="sec-01"></section>
+<section id="sec-03"><h2></</section>
+<section id="sec-04"><h2></h2></section>
+<section id="sec-05"><h2></h2></section> -->
+
+<!-- スクリプト読み込み -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll("#overlay a");
+    const overlayInput = document.getElementById("overlay-input");
+
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // 通常のジャンプを防ぐ
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 50; // 50px ずらす
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: "smooth"
+                });
+            }
+
+            // メニューを閉じる
+            overlayInput.checked = false;
+        });
+    });
+});
+</script>
+
+  
     <main>
       <section class="sec-01">
         <div class="top-contet-mov">
@@ -61,23 +94,10 @@
           ></video>
         </div>
       </section>
-      <section class="sec-02">
-        <div class="profile-container">
-          <img
-            src="./assets/img/profileimg.jpeg"
-            alt="Profile Image"
-            class="profile-img"
-          />
-          <div class="profile-text">
-            <h2>AboutME</h2>
+      
 
-            <p class="left"></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec-03">
-        <p>3つのおすすめ</p>
+      <section id="sec-03"class="sec-03">
+        <p></p>
 
         <div class="container">
           <div class="slider">
@@ -399,15 +419,30 @@
 <section class="sec-07">
   <!-- 背景画像 -->
   <img src="./assets/img/IMG_spot4.jpg" alt="マップ画像" class="background-img">
-  
-  <!-- 重ねる画像（小さくする） -->
-  <img src="./assets/img/IMG_map2.jpeg" alt="重ねる画像" class="overlay-img">
-  
+
+  <!-- 重ねる画像（クリックで変更） -->
+  <img id="overlayImage" src="./assets/img/IMG_map2.jpeg" alt="重ねる画像" class="overlay-img" onclick="changeOverlayImage()">
+
   <div class="sec-06-content">
-      <h2</h2>
-      <p></p>
+      <h2>タイトル</h2>
+      <p>説明文</p>
   </div>
 </section>
+
+<script>
+  function changeOverlayImage() {
+    let img = document.getElementById("overlayImage");
+    if (img.src.includes("IMG_map2.jpeg")) {
+      img.src = "./assets/img/IMG_map3.jpeg"; // 切り替える画像
+    } else {
+      img.src = "./assets/img/IMG_map2.jpeg"; // 元の画像
+    }
+  }
+
+  
+</script>
+
+
 
 
     </main>
